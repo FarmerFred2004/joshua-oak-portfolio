@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Godly Boy — Joshua Oak</title>
+<link href="../styles.css" rel="stylesheet"/>
+</head>
+<body>
+<header class="header">
+<a aria-label="Joshua Oak home" class="logo" href="../index.html"><span>JO</span></a>
+<nav><div class="navdrop"><a href="../index.html#work">Work</a><div class="dropdown"><a href="character-animation.html">Character Animation</a><a href="cleared-for-takeoff.html">Cleared For Takeoff</a><a href="spaceman.html">Spaceman</a><a href="lighting.html">CG Lighting</a><a href="houdini.html">Houdini &amp; FX</a><a href="godly-boy.html">Godly Boy</a><a href="traditional-art.html">Traditional Art</a><a href="life-drawing.html">Life Drawing</a></div></div><a href="../index.html#about">About</a><a href="../index.html#contact">Contact Me</a></nav>
+</header>
+
+<main class="project-detail godly-page" id="top">
+  <div class="project-heading">
+    <small>LIVE-ACTION FILM</small>
+    <h1>Godly Boy</h1>
+  </div>
+
+  <dl class="project-meta project-meta-expanded godly-meta">
+    <div><dt>Year</dt><dd>2024</dd></div>
+    <div><dt>Director</dt><dd>Karson Utzinger</dd></div>
+    <div><dt>My Role</dt><dd>VFX Supervisor · Animator</dd></div>
+    <div><dt>Format</dt><dd>Live-Action</dd></div>
+  </dl>
+
+  <p class="godly-intro">As VFX Supervisor on this film, I was responsible for taking 15 VFX shots all the way from pre-production to post-production, giving notes to my team of five artists and collaborating with the director to achieve the desired look.</p>
+
+  <section class="process-section godly-reel-section">
+    <p class="section-kicker">VFX Reel</p>
+    <h2 class="standard-subsection-title">VFX Shot Reel</h2>
+    <div class="reel-player video-with-play-overlay godly-reel">
+      <video controls playsinline preload="metadata" poster="../assets/godly-boy/godly-boy-vfx-reel-poster.jpg">
+        <source src="../assets/godly-boy/godly-boy-vfx-reel.mp4" type="video/mp4"/>
+        Your browser does not support HTML5 video.
+      </video>
+      <button class="video-play-overlay" type="button" aria-label="Play Godly Boy VFX Shot Reel"><span class="play-circle"><span class="play-triangle"></span></span></button>
+    </div>
+  </section>
+
+  <section class="process-section godly-onset-section">
+    <p class="section-kicker">Production</p>
+    <h2 class="standard-subsection-title">On Set</h2>
+    <p class="section-intro">I worked with the production team on set to make sure the green-screen photography and lighting gave our artists what they needed for the final VFX shots.</p>
+    <div class="godly-photo-grid onset-grid">
+      <button class="gallery-item" data-lightbox="../assets/godly-boy/on-set-01.png" type="button"><img src="../assets/godly-boy/on-set-01.png" alt="Godly Boy green-screen set and bunk bed setup" loading="lazy"/></button>
+      <button class="gallery-item" data-lightbox="../assets/godly-boy/on-set-02.png" type="button"><img src="../assets/godly-boy/on-set-02.png" alt="Godly Boy green-screen filming setup" loading="lazy"/></button>
+      <button class="gallery-item" data-lightbox="../assets/godly-boy/on-set-03.png" type="button"><img src="../assets/godly-boy/on-set-03.png" alt="Camera monitor showing the Godly Boy green-screen set" loading="lazy"/></button>
+      <button class="gallery-item" data-lightbox="../assets/godly-boy/on-set-04.png" type="button"><img src="../assets/godly-boy/on-set-04.png" alt="Camera monitor showing an actor against green screen" loading="lazy"/></button>
+    </div>
+  </section>
+
+  <section class="process-section godly-vfx-section">
+    <p class="section-kicker">Post-Production</p>
+    <h2 class="standard-subsection-title">VFX Work</h2>
+    <p class="section-intro">I created the CG elements in Blender and Houdini, developing the particle and simulation work that became the film’s eclipse-like visual effect.</p>
+    <div class="godly-vfx-grid">
+      <button class="gallery-item" data-lightbox="../assets/godly-boy/vfx-development-01.png" type="button"><img src="../assets/godly-boy/vfx-development-01.png" alt="Early procedural VFX development for Godly Boy" loading="lazy"/></button>
+      <button class="gallery-item" data-lightbox="../assets/godly-boy/vfx-development-02.png" type="button"><img src="../assets/godly-boy/vfx-development-02.png" alt="Later VFX development for the Godly Boy eclipse effect" loading="lazy"/></button>
+      <button class="gallery-item godly-vfx-final" data-lightbox="../assets/godly-boy/vfx-final.png" type="button"><img src="../assets/godly-boy/vfx-final.png" alt="Final eclipse-like CG effect created for Godly Boy" loading="lazy"/></button>
+    </div>
+  </section>
+</main>
+
+<footer><span>© <span id="year"></span> Joshua Oak</span><a href="../index.html#work">← Back to Work</a></footer>
+<div class="image-lightbox" hidden id="imageLightbox"><button aria-label="Close image" class="lightbox-close" id="lightboxClose" type="button">×</button><img alt="Expanded Godly Boy project image" id="lightboxImage" src=""/></div>
+<script>
+(() => {
+  const box=document.getElementById('imageLightbox'), img=document.getElementById('lightboxImage');
+  const close=()=>{box.hidden=true;img.src='';document.body.classList.remove('lightbox-open')};
+  document.querySelectorAll('[data-lightbox]').forEach(el=>el.addEventListener('click',()=>{img.src=el.dataset.lightbox;box.hidden=false;document.body.classList.add('lightbox-open')}));
+  document.getElementById('lightboxClose')?.addEventListener('click',close);
+  box?.addEventListener('click',e=>{if(e.target===box)close()});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!box.hidden)close()});
+})();
+</script>
+<script src="../script.js"></script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Houdini &amp; FX — Joshua Oak</title>
+<link href="../styles.css" rel="stylesheet"/>
+</head>
+<body>
+<header class="header">
+<a aria-label="Joshua Oak home" class="logo" href="../index.html"><span>JO</span></a>
+<nav><div class="navdrop"><a href="../index.html#work">Work</a><div class="dropdown"><a href="character-animation.html">Character Animation</a><a href="cleared-for-takeoff.html">Cleared For Takeoff</a><a href="spaceman.html">Spaceman</a><a href="lighting.html">CG Lighting</a><a href="houdini.html">Houdini &amp; FX</a><a href="godly-boy.html">Godly Boy</a><a href="traditional-art.html">Traditional Art</a><a href="life-drawing.html">Life Drawing</a></div></div><a href="../index.html#about">About</a><a href="../index.html#contact">Contact Me</a></nav>
+</header>
+<main class="project-detail houdini-page" id="top">
+  <div class="project-heading">
+    <small>HOUDINI &amp; FX</small>
+    <h1>Houdini Projects</h1>
+    <p class="houdini-intro">A collection of Houdini simulations and procedural FX projects.</p>
+  </div>
+
+  <nav class="houdini-jump-nav" aria-label="Houdini project sections">
+    <a href="#tornado-simulation">Tornado Simulation</a>
+    <a href="#rbd-destruction">RBD Destruction</a>
+    <a href="#curl-fields">Curl Fields</a>
+    <a href="#velocity-fields">Velocity Fields</a>
+    <a href="#smoke-simulation">Smoke Simulation</a>
+  </nav>
+
+  <section class="houdini-project-section" id="tornado-simulation">
+    <h2 class="standard-subsection-title">Tornado Simulation</h2>
+    <div class="houdini-video video-with-play-overlay">
+      <video controls muted playsinline preload="metadata" poster="../assets/houdini-projects/tornado-simulation-poster.jpg"><source src="../assets/houdini-projects/tornado-simulation.mp4" type="video/mp4"/></video>
+      <button class="video-play-overlay" type="button" aria-label="Play Tornado Simulation"><span class="play-circle"><span class="play-triangle"></span></span></button>
+    </div>
+    <button class="houdini-details-toggle" type="button" aria-expanded="false" aria-controls="tornado-details"><span class="houdini-toggle-circle" aria-hidden="true"><span class="arrow-down"></span><span class="arrow-up"></span></span><span>View Process</span></button>
+    <div class="houdini-project-details" id="tornado-details" hidden>
+      <h3>Node Setup</h3>
+      <div class="tornado-details-grid">
+        <div class="tornado-flipbook-pair">
+          <button class="houdini-media-card gallery-item" type="button" data-lightbox="../assets/houdini-process/tornado/flipbook-v001.mp4"><video src="../assets/houdini-process/tornado/flipbook-v001.mp4" autoplay muted loop playsinline preload="metadata"></video></button>
+          <button class="houdini-media-card gallery-item" type="button" data-lightbox="../assets/houdini-process/tornado/flipbook-v002.mp4"><video src="../assets/houdini-process/tornado/flipbook-v002.mp4" autoplay muted loop playsinline preload="metadata"></video></button>
+        </div>
+        <div class="houdini-node-grid two-up">
+          <button class="houdini-node-card gallery-item" type="button" data-lightbox="../assets/houdini-process/tornado/source-nodes.png"><img src="../assets/houdini-process/tornado/source-nodes.png" alt="Houdini node network for tornado source setup" loading="lazy"></button>
+          <button class="houdini-node-card gallery-item" type="button" data-lightbox="../assets/houdini-process/tornado/pyro-sim-nodes.png"><img src="../assets/houdini-process/tornado/pyro-sim-nodes.png" alt="Houdini node network for tornado pyro simulation" loading="lazy"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="houdini-project-section" id="rbd-destruction">
+    <h2 class="standard-subsection-title">RBD Destruction</h2>
+    <div class="houdini-video video-with-play-overlay"><video controls muted playsinline preload="metadata" poster="../assets/houdini-projects/rbd-destruction-poster.jpg"><source src="../assets/houdini-projects/rbd-destruction.mp4" type="video/mp4"/></video><button class="video-play-overlay" type="button" aria-label="Play RBD Destruction"><span class="play-circle"><span class="play-triangle"></span></span></button></div>
+    <button class="houdini-details-toggle" type="button" aria-expanded="false" aria-controls="rbd-details"><span class="houdini-toggle-circle" aria-hidden="true"><span class="arrow-down"></span><span class="arrow-up"></span></span><span>View Process</span></button>
+    <div class="houdini-project-details" id="rbd-details" hidden>
+      <h3>Node Setup</h3>
+      <div class="houdini-node-grid three-up">
+        <button class="houdini-node-card gallery-item" type="button" data-lightbox="../assets/houdini-process/rbd/dynamic-head-nodes.png"><img src="../assets/houdini-process/rbd/dynamic-head-nodes.png" alt="Houdini dynamic head fracture node network" loading="lazy"></button>
+        <button class="houdini-node-card gallery-item" type="button" data-lightbox="../assets/houdini-process/rbd/cannonball-nodes.png"><img src="../assets/houdini-process/rbd/cannonball-nodes.png" alt="Houdini cannonball RBD setup" loading="lazy"></button>
+        <button class="houdini-node-card gallery-item" type="button" data-lightbox="../assets/houdini-process/rbd/autodop-nodes.png"><img src="../assets/houdini-process/rbd/autodop-nodes.png" alt="Houdini AutoDOP rigid-body simulation network" loading="lazy"></button>
+      </div>
+    </div>
+  </section>
+
+  <section class="houdini-project-section" id="curl-fields">
+    <h2 class="standard-subsection-title">Curl Fields</h2>
+    <div class="houdini-video video-with-play-overlay"><video controls muted playsinline preload="metadata" poster="../assets/houdini-projects/curl-fields-poster.jpg"><source src="../assets/houdini-projects/curl-fields.mp4" type="video/mp4"/></video><button class="video-play-overlay" type="button" aria-label="Play Curl Fields"><span class="play-circle"><span class="play-triangle"></span></span></button></div>
+    <button class="houdini-details-toggle" type="button" aria-expanded="false" aria-controls="curl-details"><span class="houdini-toggle-circle" aria-hidden="true"><span class="arrow-down"></span><span class="arrow-up"></span></span><span>View Process</span></button>
+    <div class="houdini-project-details" id="curl-details" hidden>
+      <h3>Node Setup</h3>
+      <div class="curl-details-grid">
+        <div class="curl-playblast-card"><video autoplay muted loop playsinline preload="metadata"><source src="../assets/houdini-process/curl/playblast01.mp4" type="video/mp4"></video></div>
+        <div class="houdini-node-grid two-up">
+          <button class="houdini-node-card gallery-item" type="button" data-lightbox="../assets/houdini-process/curl/curl-particles-nodes.png"><img src="../assets/houdini-process/curl/curl-particles-nodes.png" alt="Houdini curl particles node network" loading="lazy"></button>
+          <button class="houdini-node-card gallery-item" type="button" data-lightbox="../assets/houdini-process/curl/pyro-nodes.png"><img src="../assets/houdini-process/curl/pyro-nodes.png" alt="Houdini pyro node network used with curl fields" loading="lazy"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="houdini-project-section" id="velocity-fields">
+    <h2 class="standard-subsection-title">Velocity Fields</h2>
+    <div class="houdini-video video-with-play-overlay"><video controls muted playsinline preload="metadata" poster="../assets/houdini-projects/velocity-fields-poster.jpg"><source src="../assets/houdini-projects/velocity-fields.mp4" type="video/mp4"/></video><button class="video-play-overlay" type="button" aria-label="Play Velocity Fields"><span class="play-circle"><span class="play-triangle"></span></span></button></div>
+    <button class="houdini-details-toggle" type="button" aria-expanded="false" aria-controls="velocity-details"><span class="houdini-toggle-circle" aria-hidden="true"><span class="arrow-down"></span><span class="arrow-up"></span></span><span>View Process</span></button>
+    <div class="houdini-project-details" id="velocity-details" hidden>
+      <h3>Node Setup</h3>
+      <div class="houdini-node-grid two-up">
+        <button class="houdini-node-card gallery-item" type="button" data-lightbox="../assets/houdini-process/velocity/velocity-pyro-nodes.png"><img src="../assets/houdini-process/velocity/velocity-pyro-nodes.png" alt="Houdini velocity fields pyro node network" loading="lazy"></button>
+        <button class="houdini-node-card gallery-item" type="button" data-lightbox="../assets/houdini-process/velocity/velocity-development.png"><img src="../assets/houdini-process/velocity/velocity-development.png" alt="Houdini velocity fields development view" loading="lazy"></button>
+      </div>
+    </div>
+  </section>
+
+  <section class="houdini-project-section" id="smoke-simulation">
+    <h2 class="standard-subsection-title">Smoke Simulation</h2>
+    <div class="houdini-video video-with-play-overlay"><video controls muted playsinline preload="metadata" poster="../assets/houdini-projects/smoke-simulation-poster.jpg"><source src="../assets/houdini-projects/smoke-simulation.mp4" type="video/mp4"/></video><button class="video-play-overlay" type="button" aria-label="Play Smoke Simulation"><span class="play-circle"><span class="play-triangle"></span></span></button></div>
+    <button class="houdini-details-toggle" type="button" aria-expanded="false" aria-controls="smoke-details"><span class="houdini-toggle-circle" aria-hidden="true"><span class="arrow-down"></span><span class="arrow-up"></span></span><span>View Process</span></button>
+    <div class="houdini-project-details" id="smoke-details" hidden>
+      <h3>Node Setup</h3>
+      <div class="houdini-node-grid two-up">
+        <button class="houdini-node-card gallery-item" type="button" data-lightbox="../assets/houdini-process/smoke/smoke-development.png"><img src="../assets/houdini-process/smoke/smoke-development.png" alt="Houdini smoke simulation development view" loading="lazy"></button>
+        <button class="houdini-node-card gallery-item" type="button" data-lightbox="../assets/houdini-process/smoke/smoke-orb-nodes.png"><img src="../assets/houdini-process/smoke/smoke-orb-nodes.png" alt="Houdini smoke orb node network" loading="lazy"></button>
+      </div>
+    </div>
+  </section>
+</main>
+<footer><span>© <span id="year"></span> Joshua Oak</span><a href="../index.html#work">← Back to Work</a></footer>
+<div class="image-lightbox" hidden id="imageLightbox"><button aria-label="Close image" class="lightbox-close" id="lightboxClose" type="button">×</button><img alt="Expanded Houdini process image" id="lightboxImage" src=""><video id="lightboxVideo" muted loop autoplay playsinline controls hidden></video></div>
+<script>
+(() => {
+  const box=document.getElementById('imageLightbox'), img=document.getElementById('lightboxImage'), vid=document.getElementById('lightboxVideo');
+  const close=()=>{box.hidden=true;img.src='';vid.pause();vid.removeAttribute('src');vid.load();img.hidden=false;vid.hidden=true;document.body.classList.remove('lightbox-open')};
+  document.querySelectorAll('[data-lightbox]').forEach(el=>el.addEventListener('click',()=>{
+    const src=el.dataset.lightbox;
+    if(/\.mp4(?:$|\?)/i.test(src)){img.hidden=true;vid.hidden=false;vid.src=src;vid.play().catch(()=>{});}else{vid.hidden=true;img.hidden=false;img.src=src;}
+    box.hidden=false;document.body.classList.add('lightbox-open');
+  }));
+  document.getElementById('lightboxClose')?.addEventListener('click',close);
+  box?.addEventListener('click',e=>{if(e.target===box)close()});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!box.hidden)close()});
+})();
+</script>
+<script src="../script.js"></script>
+</body>
+</html>
