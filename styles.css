@@ -1325,7 +1325,6 @@ main{width:100%;max-width:100%}
   /* Eliminate the narrow uncovered strip visible in device emulation. */
   .hero,.hero video,.work,.about-section,.contact,footer{max-width:100%;width:100%}
   .hero{height:clamp(330px,94vw,470px)}
-  .hero video{position:absolute;inset:0;object-fit:cover}
   .hero-title{padding:0 18px}
   .hero-title h1{font-size:clamp(31px,9.2vw,44px);white-space:nowrap}
   .hero-title p{font-size:clamp(10px,3vw,14px);letter-spacing:.14em;white-space:nowrap}

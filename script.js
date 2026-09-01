@@ -176,35 +176,68 @@ document.querySelectorAll('.video-with-play-overlay').forEach((wrap) => {
   });
 })();
 
-// Homepage hero — play from 0:00 on the visitor's first landing in this tab.
-// After they leave for a project page and return home, start later in the montage for variety.
+// V97.4 Homepage hero — keep the matching poster visible while the video seeks,
+// explicitly resume playback, then reveal only after playback has started and a frame is decoded.
 (() => {
   const heroVideo = document.querySelector('.hero video');
   if (!heroVideo) return;
 
-  const hasSeenHome = sessionStorage.getItem('joshuaOakHomeSeen') === '1';
-  sessionStorage.setItem('joshuaOakHomeSeen', '1');
+  const chosen = window.__joshuaOakHeroStart || {time: 0, poster: 'assets/hero-posters/hero-000.jpg'};
+  heroVideo.poster = chosen.poster;
 
-  if (!hasSeenHome) {
-    const startAtBeginning = () => {
-      try { heroVideo.currentTime = 0; } catch (e) {}
-    };
-    if (heroVideo.readyState >= 1) startAtBeginning();
-    else heroVideo.addEventListener('loadedmetadata', startAtBeginning, {once:true});
-    return;
-  }
-
-  const chooseRandomStart = () => {
-    const duration = heroVideo.duration;
-    if (!Number.isFinite(duration) || duration <= 0) return;
-    const minStart = Math.min(Math.max(8, duration * 0.12), Math.max(0, duration - 10));
-    const maxStart = Math.max(minStart, duration - 8);
-    const randomStart = minStart + Math.random() * (maxStart - minStart);
-    try { heroVideo.currentTime = randomStart; } catch (e) {}
+  let revealed = false;
+  const revealVideo = () => {
+    if (revealed) return;
+    revealed = true;
+    heroVideo.classList.remove('hero-video-pending');
   };
 
-  if (heroVideo.readyState >= 1) chooseRandomStart();
-  else heroVideo.addEventListener('loadedmetadata', chooseRandomStart, {once:true});
+  const revealAfterDecodedFrame = () => {
+    if ('requestVideoFrameCallback' in heroVideo) {
+      heroVideo.requestVideoFrameCallback(() => revealVideo());
+    } else {
+      requestAnimationFrame(() => requestAnimationFrame(revealVideo));
+    }
+  };
+
+  const playThenReveal = () => {
+    heroVideo.addEventListener('playing', revealAfterDecodedFrame, {once:true});
+    try {
+      const playPromise = heroVideo.play();
+      if (playPromise?.catch) playPromise.catch(() => {});
+    } catch (e) {}
+  };
+
+  const prepareChosenStart = () => {
+    if (chosen.time <= 0.05) {
+      playThenReveal();
+      return;
+    }
+
+    heroVideo.addEventListener('seeked', playThenReveal, {once:true});
+    try { heroVideo.currentTime = chosen.time; } catch (e) {}
+  };
+
+  if (heroVideo.readyState >= 1) prepareChosenStart();
+  else heroVideo.addEventListener('loadedmetadata', prepareChosenStart, {once:true});
+})();
+
+// V97 — warm full-size lightbox assets shortly before a likely click/tap.
+// This changes no lightbox behavior; it only gives the browser a head start on the image request.
+(() => {
+  const warmed = new Set();
+  const warm = el => {
+    const src = el?.dataset?.lightbox;
+    if (!src || warmed.has(src)) return;
+    warmed.add(src);
+    const preload = new Image();
+    preload.decoding = 'async';
+    preload.src = src;
+  };
+  document.querySelectorAll('[data-lightbox]').forEach(el => {
+    el.addEventListener('pointerenter', () => warm(el), {passive:true});
+    el.addEventListener('pointerdown', () => warm(el), {passive:true});
+  });
 })();
 
 // V86 — mobile hamburger navigation for every page.
